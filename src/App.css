@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Ensure the app container takes full height */
+html, body, #root, .lm-chat-app-container {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important; /* Prevent body scroll when chat is open */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Apply consistent background to all chat headers */
+.lm-channel-header,
+.lm-conversation-search,
+.lm-channel-list-header,
+.lm-chatroom-search {
+  background-color: #f0f2f5 !important; /* Light grey background for all headers */
+  border-bottom: 1px solid #e0e0e0 !important;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style for the main chat layout containers */
+.lm-channel-block {
+  display: flex !important;
+  height: 100% !important;
+  width: 100% !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.lm-right-panel {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
 }
 
-.card {
-  padding: 2em;
+.lm-chat-box {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
 }
 
-.read-the-docs {
-  color: #888;
+/* Adjust header text and icons for consistency */
+.lm-channel-title,
+.lm-channel-list-header .title,
+.lm-conversation-search-input-field,
+.lm-chatroom-search-input-field {
+  color: #333333 !important;
+  font-weight: 600 !important;
+}
+
+.lm-header-left .back-icon,
+.lm-header-right .lm-channel-icon,
+.lm-chatroom-search-go-back-icon,
+.lm-conversation-search-go-back-icon {
+  color: #555555 !important;
+}
+
+/* Ensure search input fields match header style */
+.lm-chatroom-search-input,
+.lm-conversation-search-input {
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.lm-chatroom-search-input-field::placeholder,
+.lm-conversation-search-input-field::placeholder {
+  color: #999999 !important;
 }
