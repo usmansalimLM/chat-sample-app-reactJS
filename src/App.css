@@ -1,42 +1,110 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Main container for the chat application */
+.lm-chat-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #f0f2f5 !important; /* Light grey background for the overall app */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Custom styling for various header components to ensure consistency */
+
+/* Main chatroom header */
+.lm-channel-header {
+  background-color: #4a90e2 !important; /* Example blue background */
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Adjust text color for elements within the main chatroom header */
+.lm-channel-header .lm-channel-title {
+  color: #ffffff !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.lm-channel-header .lm-channel-desc {
+  color: #e0e0e0 !important;
 }
 
-.card {
-  padding: 2em;
+.lm-channel-header .lm-channel-icon {
+  color: #ffffff !important;
 }
 
-.read-the-docs {
-  color: #888;
+/* Search conversation header (appears when search is active in a chatroom) */
+.lm-conversation-search {
+  background-color: #4a90e2 !important; /* Match main header background */
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Adjust text color for elements within the search conversation header */
+.lm-conversation-search .lm-conversation-search-input-field {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.lm-conversation-search .lm-conversation-search-input-field::placeholder {
+  color: #e0e0e0 !important;
+}
+
+.lm-conversation-search .lm-conversation-search-go-back-icon {
+  color: #ffffff !important;
+}
+
+/* Channel list header (left panel header) */
+.lm-channel-list-header {
+  background-color: #3a7bd5 !important; /* Slightly darker blue for channel list header */
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Adjust text color for elements within the channel list header */
+.lm-channel-list-header .title {
+  color: #ffffff !important;
+}
+
+.lm-channel-list-header .icon {
+  color: #ffffff !important;
+}
+
+/* Chatroom search header (appears when searching in the channel list) */
+.lm-chatroom-search {
+  background-color: #3a7bd5 !important; /* Match channel list header background */
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Adjust text color for elements within the chatroom search header */
+.lm-chatroom-search .lm-chatroom-search-input-field {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.lm-chatroom-search .lm-chatroom-search-input-field::placeholder {
+  color: #e0e0e0 !important;
+}
+
+.lm-chatroom-search .lm-chatroom-search-go-back-icon {
+  color: #ffffff !important;
+}
+
+/* General chat box styling */
+.lm-chat-box {
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ensure the main channel block takes full height and width */
+.lm-channel-block {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Adjust the right panel to take available width */
+.lm-right-panel {
+  flex: 1 !important;
 }
