@@ -1,42 +1,348 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* General layout */
+.lm-channel-block {
+  background-color: #f0f2f5 !important; /* WhatsApp background */
+  height: 100vh !important; /* Ensure full viewport height */
+  width: 100vw !important; /* Ensure full viewport width */
+  overflow: hidden !important; /* Prevent scrollbars on main container */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Left Panel (Channel List) */
+.lm-left-panel {
+  background-color: #ffffff !important;
+  border-right: 1px solid #e0e0e0 !important;
+  height: 100% !important; /* Ensure full height of parent */
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.lm-channel-list-header {
+  background-color: #00897B !important; /* WhatsApp header green */
+  padding: 15px 16px !important;
+  border-bottom: none !important;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.lm-channel-list-header .title {
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+.lm-channel-list-header .icon img {
+  filter: brightness(0) invert(1) !important; /* White icons */
+}
+.lm-channel-list-body .channel-media.selected {
+  background-color: #e6ebf5 !important; /* Selected chat highlight */
+}
+.lm-channel-list .lm-channel-list-body .channel-media .channel-desc .channel-title {
+  color: #333333 !important;
+}
+.lm-channel-list .lm-channel-list-body .channel-media .channel-desc .channel-info .channel-last-conversation {
+  color: #666666 !important;
+}
+.lm-chat-channel-toggle button {
+  color: #00897B !important; /* Green for active tab text */
+}
+.lm-chat-channel-toggle .Mui-selected {
+  color: #00897B !important;
+}
+.lm-chat-channel-toggle .MuiTabs-indicator {
+  background-color: #00897B !important;
+}
+.lm-chat-create-new-dm-conversation {
+  background-color: #00897B !important;
+  color: #ffffff !important;
+}
+.lm-chat-create-new-dm-conversation > img {
+  filter: brightness(0) invert(1) !important;
+}
+.lm-chat-new-chat {
+  color: #333333 !important;
+}
+.lm-chat-new-chat .avatar-initials {
+  background-color: #e8ecf2 !important;
+}
+.lm-chat-explore-chat-button .explore-button {
+  background-color: #e5f3f2 !important;
+}
+.lm-chat-icon-explore-chats {
+  color: #00897B !important;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Right Panel (Chatroom) */
+.lm-right-panel {
+  background-color: #e0e0e0 !important; /* Light gray chat background */
+  height: 100% !important; /* Ensure full height of parent */
+}
+.lm-channel-header {
+  background-color: #00897B !important; /* WhatsApp header green */
+  padding: 10px 16px !important;
+  border-bottom: none !important;
+}
+.lm-channel-header .lm-channel-title {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+.lm-channel-header .lm-channel-participants {
+  color: #e0e0e0 !important; /* Lighter text for participants */
+}
+.lm-channel-header .lm-channel-icon img {
+  filter: brightness(0) invert(1) !important; /* White icons */
+}
+/* Styles for search header when toggled */
+.lm-conversation-search {
+  background-color: #00897B !important; /* Consistent search header */
+  padding: 10px 16px !important; /* Match header padding */
+  height: auto !important; /* Adjust height dynamically */
+}
+.lm-conversation-search-input-field {
+  background-color: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 8px 16px !important;
+  color: #333333 !important;
+  border: none !important; /* Remove default border */
+}
+.lm-conversation-search-go-back-icon img {
+  filter: brightness(0) invert(1) !important;
+}
+.lm-conversation-search-list {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+.lm-conversation-search-list-item:hover {
+  background-color: #f0f0f0 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Chat Input Area */
+.lm-channel-footer-wrapper {
+  background-color: #f0f2f5 !important; /* Match chat background */
+}
+.lm-channel-footer {
+  background-color: #f0f2f5 !important;
+  padding: 8px 16px !important;
+}
+.lm-chat-text-area-wrapper {
+  background-color: #ffffff !important;
+  border-radius: 20px !important;
+  box-shadow: none !important;
+  border: 1px solid #e0e0e0 !important;
+}
+.lm-chat-text-area__input-box {
+  padding: 10px 15px !important;
+  color: #333333 !important;
+}
+.lm-chat-text-area__input-box:empty:before {
+  content: attr(data-placeholder) !important; /* Ensure placeholder is visible */
+  color: #999999 !important;
+}
+.lm-channel-icon.send .lm-post-conversation img {
+  filter: invert(20%) sepia(80%) saturate(2000%) hue-rotate(140deg) brightness(90%) contrast(80%) !important; /* Green send icon */
+}
+.lm-channel-icon img {
+  filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(80%) !important; /* Gray icons */
+}
+.lm-channel-icon.lm-cursor-pointer:hover img {
+  filter: invert(20%) sepia(80%) saturate(2000%) hue-rotate(140deg) brightness(90%) contrast(80%) !important; /* Green on hover */
 }
 
-.card {
-  padding: 2em;
+/* Message Bubbles */
+.lm-chat-card.sender .conversation {
+  background-color: #dcf8c6 !important; /* Light green for sender */
+  border-radius: 10px !important;
+}
+.lm-chat-card.receiver .conversation {
+  background-color: #ffffff !important; /* White for receiver */
+  border-radius: 10px !important;
+}
+.lm-channel .conversation .name {
+  color: #00897B !important; /* Green for sender name */
+}
+.lm-channel .conversation .msg {
+  color: #333333 !important;
+}
+.lm-channel .conversation .time {
+  color: #888888 !important;
+}
+.lm-channel .data-pill {
+  background-color: #e0e0e0 !important;
+  color: #666666 !important;
+}
+.lm-reply-wrapper {
+  background-color: rgba(0, 137, 123, 0.1) !important; /* Light green for reply preview */
+  border-left: 3px solid #00897B !important;
+}
+.lm-reply-wrapper-content-name {
+  color: #00897B !important;
+}
+.lm-reply-wrapper-content-msg {
+  color: #666666 !important;
+}
+.lm-input-message-reply {
+  background-color: #e0e0e0 !important;
+}
+.lm-input-message-reply-message-wrapper {
+  background-color: #f0f2f5 !important;
+  border-left: 3px solid #00897B !important;
+}
+.lm-input-message-username {
+  color: #00897B !important;
+}
+.lm-input-message-text {
+  color: #666666 !important;
 }
 
-.read-the-docs {
-  color: #888;
+/* Polls */
+.lm-poll-wrapper {
+  background-color: #ffffff !important;
+}
+.lm-poll-heading {
+  color: #333333 !important;
+}
+.poll-creation-textarea {
+  border: 1px solid #e0e0e0 !important;
+}
+.poll-option-text-input {
+  border: 1px solid #e0e0e0 !important;
+}
+.poll-option-remove.lm-cursor-pointer {
+  filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(80%) !important;
+}
+.poll-option-add-more {
+  color: #00897B !important;
+  border: 1px solid #e0e0e0 !important;
+}
+.poll-option-add-more-icon {
+  filter: invert(20%) sepia(80%) saturate(2000%) hue-rotate(140deg) brightness(90%) contrast(80%) !important;
+}
+.add-more-text {
+  color: #00897B !important;
+}
+.poll-expires-heading {
+  color: #333333 !important;
+}
+.poll-expiry-field {
+  border: 1px solid #e0e0e0 !important;
+}
+.poll-advanced-option-text {
+  color: #333333 !important;
+}
+.poll-create-button {
+  background-color: #00897B !important;
+  color: #ffffff !important;
+}
+.lm-poll .poll-header button.ends {
+  background-color: #d0021b !important; /* Red for ends */
+}
+.lm-poll .pollOptions .pollOption {
+  border: 1px solid #00897B !important;
+  color: #00897B !important;
+}
+.pollOptionSelected {
+  border: 1px solid #cffdf9 !important;
+}
+.pollOptionSubmitted {
+  border: 1px solid #cffdf9 !important;
+  background-color: #cffdf9 !important;
+}
+.lm-poll .pollOptions .votes {
+  color: #075e54 !important;
+}
+.lm-poll .totalVotes {
+  color: #00897B !important;
+}
+.lm-poll-submit-button-active {
+  background-color: #00897B !important;
+  color: #ffffff !important;
+}
+.lm-poll-response-add-option-submit {
+  background-color: #00897B !important;
+  color: #ffffff !important;
+}
+
+/* Participants List */
+.lm-participant-header {
+  background-color: #00897B !important;
+  color: #ffffff !important;
+}
+.lm-participant-header .heading {
+  color: #ffffff !important;
+}
+.lm-participant-header .back-icon img {
+  filter: brightness(0) invert(1) !important;
+}
+.lm-participant-header .counts {
+  color: #e0e0e0 !important;
+}
+.member-search {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+.member-search input {
+  color: #333333 !important;
+}
+.lm-participant-body {
+  background-color: #ffffff !important;
+}
+.lm-participant-card .lm-participant-card-detail .name {
+  color: #333333 !important;
+}
+.lm-participant-card .lm-participant-card-detail .desc {
+  color: #666666 !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+/* Chatroom Search (when active in channel list) */
+.lm-chatroom-search {
+  background-color: #00897B !important; /* Consistent search header */
+  padding: 10px 16px !important; /* Match header padding */
+  height: auto !important; /* Adjust height dynamically */
+}
+.lm-chatroom-search-go-back-icon img {
+  filter: brightness(0) invert(1) !important;
+}
+.lm-chatroom-search-input-field {
+  background-color: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 8px 16px !important;
+  color: #333333 !important;
+  border: none !important; /* Remove default border */
+}
+.lm-chatroom-search-list {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+.lm-chatroom-search-list-item:hover {
+  background-color: #f0f0f0 !important;
+}
+
+/* General Icons */
+.lm-add-emoji {
+  filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(80%) !important;
+}
+.lm-add-emoji:hover {
+  filter: invert(20%) sepia(80%) saturate(2000%) hue-rotate(140deg) brightness(90%) contrast(80%) !important;
+}
+.lm-giffy-icon {
+  filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(80%) !important;
+}
+.lm-giffy-icon:hover {
+  filter: invert(20%) sepia(80%) saturate(2000%) hue-rotate(140deg) brightness(90%) contrast(80%) !important;
+}
+.lm-chat-input-attachment-label img {
+  filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(80%) !important;
+}
+.lm-chat-input-attachment-label:hover img {
+  filter: invert(20%) sepia(80%) saturate(2000%) hue-rotate(140deg) brightness(90%) contrast(80%) !important;
+}
+.lm-chat-input-attachment-label .title {
+  color: #666666 !important;
+}
+.lm-chat-input-attachment-label:hover .title {
+  color: #00897B !important;
+}
+
+/* Ensure full height for chat box and message list */
+.lm-chat-box {
+  height: 100% !important;
+}
+.lm-channel {
+  height: 100% !important;
+  overflow-y: auto !important; /* Allow scrolling for messages */
+}
+.lm-dual-scroll-container {
+  height: 100% !important;
 }
